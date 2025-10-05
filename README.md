@@ -1,6 +1,19 @@
-Features
+#Sorting Algorithm Visualizer (C++ / SDL3)
 
-The application visualizes the following six classic sorting algorithms:
+This is a high-performance C++ application that uses the core SDL3 library to provide real-time, step-by-step graphical visualization of fundamental sorting algorithms. It's a powerful educational tool for anyone looking to truly understand the mechanics and efficiency of these algorithms.
+
+#Project Overview
+
+Detail	Description
+Core Language	C++17
+Graphics Library	SDL3 (Simple DirectMedia Layer)
+Interaction	Console-driven menu with in-window controls
+Key Function	Renders array elements as bars, using color to highlight comparisons and swaps.
+Array Size	Fixed at 120 elements.
+
+Algorithms Included
+
+The application features visualizations for six essential sorting methods:
 
     Selection Sort
 
@@ -14,48 +27,41 @@ The application visualizes the following six classic sorting algorithms:
 
     Heap Sort
 
-Array elements are drawn as vertical bars, with the bar height representing their value. Specific colors are used to highlight elements currently being compared, swapped, or finalized.
+#Build & Requirements
 
-Requirements
+Prerequisites
 
-To build and run this project, you need:
+To successfully compile and run this program, you must have the following dependencies installed:
 
-    A C++ compiler (supporting C++17 or later).
+    A C++ compiler supporting C++17 or newer (e.g., GCC, Clang, MSVC).
 
-    The SDL3 Development Libraries installed on your system.
+    The SDL3 Development Libraries.
 
-Note: This project uses standard console input/output for menus and controls, meaning it does not require the SDL_ttf library.
+#Compilation Instructions
 
-Build and Run Instructions
+Since this is a single-file project (viz_sort_algo.cpp), you must link directly against the SDL3 library.
 
-1. Compiling the Code
-
-Since this is a single-file project (viz_sort_algo.cpp), you must link it against the SDL3 library during compilation.
-
-Example Compilation Command (using g++):
+Typical Compilation Command (Linux/macOS using g++):
 Bash
 
 g++ viz_sort_algo.cpp -o sort_visualizer `sdl3-config --cflags --libs` -std=c++17
 
-(You may need to adjust the command if sdl3-config is not available or if your SDL3 libraries are in non-standard locations.)
+Execution
 
-2. Execution
-
-Run the compiled executable from your terminal. The application will first display a welcome message and control menu in the console before opening the graphical visualization window.
+Run the compiled executable from your terminal. The program starts with a console menu for selection and controls the visualization window from there.
 Bash
 
 ./sort_visualizer
 
-User Controls
+🎮 Controls
 
-Interaction is handled via specific key presses while the visualization window is active:
-Key	Algorithm / Action
-0	Generate a new, randomized list of elements.
-1 - 6	Start the corresponding sorting algorithm (e.g., 1 for Selection Sort, 6 for Heap Sort).
-Spacebar	Toggle Pause or Resume the simulation.
-Up Arrow	Increase the visualization speed (decrease the delay).
-Down Arrow	Decrease the visualization speed (increase the delay).
-Q	Quit the SDL window and return to the main console menu.
--1 (in console)	Quit the entire program.
+The application uses intuitive key bindings to manage the simulation flow while the visualization window is active:
+Key	Functionality	Description
+0	New Array	Generates a new, fully randomized list of elements.
+1-6	Start Sort	Initiates the corresponding sorting algorithm.
+Spacebar	Pause/Resume	Toggles the state of the simulation.
+Up Arrow	Speed Up	Decreases the delay between steps, accelerating the sort.
+Down Arrow	Slow Down	Increases the delay, allowing for closer observation.
+Q	Quit Window	Closes the SDL graphics window, returning you to the main console menu.
 
-Important Note: The list size is fixed at 120 elements for optimal display on the screen. Delays are artificially added to faster algorithms (like Merge Sort and Quick Sort) so that their complex steps can be properly visualized in real-time.
+Performance Note: Faster algorithms (like Merge Sort and Quick Sort) have an artificial delay built-in so that their steps remain observable by the human eye.
