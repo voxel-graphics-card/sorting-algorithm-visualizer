@@ -74,5 +74,3 @@ The application uses intuitive key bindings to manage the simulation flow while 
 **Performance Note:** Faster algorithms (like Merge Sort and Quick Sort) have an **artificial delay** built-in so that their steps remain observable by the human eye.
 
 -----
-
-This final version is ready to be used as your project's main documentation\!
